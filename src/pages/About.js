@@ -1,0 +1,11 @@
+import React from "react";
+
+const About = () => {
+  return (
+    <div className="about-container">
+      <p>This is an about page</p>
+    </div>
+  );
+};
+
+export default About;

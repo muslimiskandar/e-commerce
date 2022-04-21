@@ -1,0 +1,13 @@
+.add-to-cart-common-button {
+  width: 100%;
+  height: 45px;
+  background-color: rgb(185, 71, 71);
+  border: 1px solid rgb(204, 3, 3);
+  outline: none;
+  font-size: 20px;
+}
+
+.add-to-cart-common-button:hover {
+  background-color: rgb(165, 40, 40);
+  outline: none;
+}
