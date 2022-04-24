@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Nav,
-  Navbar,
-  Container,
-  Button,
-  FormControl,
-  NavDropdown,
-  Form,
-  Badge,
-} from "react-bootstrap";
+import { Nav, Navbar, Container, NavDropdown, Badge } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -38,17 +29,11 @@ const NavbarTop = () => {
             >
               <NavDropdown title="Collection" id="navbarScrollingDropdown">
                 <div className="dropdown-container-main">
-                  {/* <NavDropdown.Item> */}
-                  <Link to="/men">Men</Link>
-                  {/* </NavDropdown.Item> */}
-                  {/* <NavDropdown.Item> */}
-                  <Link to="/men">Women</Link>
-                  {/* </NavDropdown.Item> */}
+                  <Link to="collections/men's clothing">Men</Link>
+                  <Link to="collections/women's clothing">Women</Link>
+                  <Link to="/collections/jewelery">Jewelery</Link>
+                  <Link to="collections/electronics">Electronics</Link>
                 </div>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Tech accessories
-                </NavDropdown.Item>
               </NavDropdown>
               <div className="other-service">
                 <Link to="/about">About</Link>

@@ -12,8 +12,15 @@ code {
     monospace;
 }
 
-.App {
-  /* background-color: #f8f9fa; */
+.all-products-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.all-products-container > h2 {
+  margin-bottom: 40px;
 }
 
 .products-container {
@@ -23,8 +30,6 @@ code {
 }
 
 .products-container > .card {
-  /* border: none; */
-  /* margin: 15px; */
   box-shadow: 2px 1px 5px rgb(135, 135, 135);
 }
 
@@ -71,7 +76,6 @@ code {
 .navbar-top .navbar-nav-scroll {
   display: flex;
   align-items: center;
-  /* justify-content: space-evenly !important; */
 }
 
 .navbar-top .brand-logo a {
@@ -90,9 +94,7 @@ code {
 .navbar-top .dropdown-container-main {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   font-size: 18px;
-  /* text-decoration: none; */
 }
 
 .navbar-top .dropdown-container-main a {
@@ -132,28 +134,54 @@ code {
 
 .single-product-container {
   display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 100px auto;
-  background-color: beige;
-  /* align-items: center; */
-  justify-content: space-evenly;
-}
-
-.single-main-product-container {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  /* flex-direction: ; */
+  width: 60%;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .single-product-description {
   margin-top: 30px;
+  width: 400px;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.single-product-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .single-product-right {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  justify-content: space-between;
+  margin: 20px 20px 0 20px;
+  width: 70%;
+}
+
+.single-product-right h4 {
+  margin-bottom: 10px;
+}
+
+.single-product-img-container div {
+  padding: 65px;
+}
+
+.feedback-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.feedback-container div:first-child {
+  margin-right: 10px;
+}
+
+.feedback-container div:nth-child(2) {
+  margin-right: 110px;
+}
+
+#safe-secure {
+  text-align: center;
+  opacity: 0.6;
 }

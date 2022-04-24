@@ -4,13 +4,12 @@ import NavbarTop from "./components/NavbarTop";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Track from "./pages/Track";
-import Men from "./pages/collection/Men";
-import Women from "./pages/collection/Women";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import SingleProduct from "./components/SingleProduct";
+import SingleCollection from "./components/SingleCollection";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +22,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/track" element={<Track />} />
-          <Route path="/men" element={<Men />} />
-          <Route path="/women" element={<Women />} />
+          <Route
+            path="/collections/:collectionName"
+            element={<SingleCollection />}
+          />
+          {/* <Route path="/women" element={<Women />} /> */}
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:productId" element={<SingleProduct />} />
         </Routes>

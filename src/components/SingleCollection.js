@@ -1,32 +1,27 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import useSingleCollection from "../hooks/useSingleCollection";
 import { Spinner } from "react-bootstrap";
-import { useAllProducts } from "../hooks/useAllProducts";
 import SingleProductModal from "./SingleProductModal";
 import Product from "./Product";
 
-const AllProducts = () => {
+const SingleCollection = () => {
+  const { collectionName } = useParams();
   const [modalShow, setModalShow] = useState(false);
   const [passId, setPassId] = useState();
 
-  const onSuccess = (data) => {
-    console.log(data);
-  };
-
-  const onError = (error) => {
-    console.log(error);
-  };
-
-  const { isLoading, data, isError, error, isFetching } = useAllProducts(
-    onSuccess,
-    onError
-  );
-
-  console.log(isFetching);
+  const { isLoading, data, isError, error } =
+    useSingleCollection(collectionName);
 
   if (isLoading) {
     return (
-      <div className="spinner-icon">
-        <Spinner animation="border" variant="secondary" size="xs" />
+      <div className="all-products-container">
+        <h2>
+          {collectionName.charAt(0).toUpperCase() + collectionName.slice(1)}
+        </h2>
+        <div className="spinner-icon">
+          <Spinner animation="border" variant="secondary" size="xs" />
+        </div>
       </div>
     );
   }
@@ -34,10 +29,11 @@ const AllProducts = () => {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-
   return (
     <div className="all-products-container">
-      <h2>All products</h2>
+      <h2>
+        {collectionName.charAt(0).toUpperCase() + collectionName.slice(1)}
+      </h2>
       <div className="products-container">
         <Product
           data={data}
@@ -54,4 +50,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default SingleCollection;
